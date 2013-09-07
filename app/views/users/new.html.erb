@@ -1,0 +1,40 @@
+
+
+<% provide(:title,'Register') %>
+<h3>Register</h3>
+<p>Enter your details to create a new profile</p>
+
+<div>
+      <% if flash[:status]==TRUE %>
+
+<p> <%=flash[:alert] %></p>
+
+<% elsif flash[:status] == FALSE %>
+
+<%= flash[:alert]%>
+
+ <% end %>
+
+
+</div>
+<%= form_for(@user) do |user|%>	
+<table>
+<tr><td>	
+<%= user.label :name%> </td>
+<td><%= user.text_field :name %></td></tr>
+<tr><td>
+<%= user.label :email ,'Email Address'%></td>
+<td><%= user.text_field :email %></td></tr>
+<tr><td>
+<%= user.label :password , 'Password'%></td>
+<td><%= user.password_field :password %></td></tr>
+<tr><td>
+<%= user.label :password_confirmation , 'Confirm Password'%></td>
+<td><%= user.password_field :password_confirmation %></td></tr>
+<tr><td>
+<%= user.submit "Register"%></td></tr>
+</table>
+<% end %>
+<% flash[:status]=false %>
+
+

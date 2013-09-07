@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Msync</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+<h1><div class="page-header">	
+
+Music Sync	<small>a common platform for music artist and fans to be in sync!</small>			
+
+</div></h1>
+    <div class="container">
+    <div class="navbar">
+    <div class="navbar-inner">
+    <a class="brand" href="#">Title</a>
+    <ul class="nav">
+    <li class=""><a href="#">Home</a></li>
+    <li><a href="#">Browse</a></li>
+    <li><a href="#">Register</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+    <div class="content">
+
+<%= yield %>
+</div>
+</body>
+</html>
+
+
