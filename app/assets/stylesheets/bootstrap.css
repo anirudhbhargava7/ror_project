@@ -662,7 +662,7 @@ p {
 }
 
 small {
-  font-size: 85%;
+  font-size: 20px;
 }
 
 strong {
@@ -735,7 +735,7 @@ a.text-success:focus {
 }
 
 h1{
-  margin: 10px 0;
+  margin: 10px 0px;
   font-family: Times new Roman ;
   line-height: 20px;
   color: inherit;
@@ -761,6 +761,7 @@ h3 small,
 h4 small,
 h5 small,
 h6 small {
+  text-align: right;
   font-weight: normal;
   font-size: 10px;
   line-height: 1;

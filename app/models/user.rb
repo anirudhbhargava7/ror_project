@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password , :password_confirmation
+has_one :MemberProfile  
 validates :email ,:presence=>true, :uniqueness=>true
 
 validates :name ,:presence => true

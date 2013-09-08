@@ -8,6 +8,7 @@ group :development, :test do
 gem 'sqlite3', '1.3.7'
 gem 'rspec-rails', '2.13.1'
 end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :test do

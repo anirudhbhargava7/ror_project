@@ -9,22 +9,43 @@
 <body>
 	
 <h1><div class="page-header">	
-
-Music Sync	<small>a common platform for music artist and fans to be in sync!</small>			
-
-</div></h1>
+<p>
+Music Sync</p> <small>a common platform for music artist and fans to be in sync!</small>			
+ </div></h1>
+<!--Menu bar for logged in User-->
+ <% if session[:email] != nil %>
     <div class="container">
+    <div class="navbar">
+    <div class="navbar-inner">
+    <a class="brand" href="/member_one">Profile</a>
+    <ul class="nav">
+    <li class=""><a href="#">Search</a></li>
+    <li><a href="#">Manage</a></li>
+    <li><a href="#">Playlist</a></li>
+    <li><a href="#">Setting</a></li>
+    <li><a href="/logout">Sign Out</a></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+<% end %>
+<!--Menu Bar for not logged in user-->
+<% if session[:email] == nil%>
+<div class="container">
     <div class="navbar">
     <div class="navbar-inner">
     <a class="brand" href="#">Title</a>
     <ul class="nav">
     <li class=""><a href="#">Home</a></li>
     <li><a href="#">Browse</a></li>
-    <li><a href="#">Register</a></li>
+    <li><a href="/register">Register</a></li>
+    <li><a href="/login">Sign in</a></li>
     </ul>
     </div>
     </div>
     </div>
+<% end %>
+
     <div class="content">
 
 <%= yield %>

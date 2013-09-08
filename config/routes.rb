@@ -1,7 +1,19 @@
 Msync::Application.routes.draw do
 
-  resources :users
+resources :users
    match '/register' => 'users#new'
+  
+resources :sessions
+  match '/login' => 'sessions#new'
+  match '/logout'=> 'sessions#destroy'
+ 
+resources :profiles
+  match '/member_one' => 'profiles#index'
+  match '/member_create' => 'profiles#create'
+  
+  #get "sessions/create"
+
+  #get "sessions/destroy"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

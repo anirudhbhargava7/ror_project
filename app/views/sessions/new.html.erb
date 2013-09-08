@@ -1,0 +1,25 @@
+<% provide(:title,'Signin') %>
+<h3>Sign in</h3>
+
+<%if flash[:notice]%>
+<p>
+<%=flash[:notice] %>
+<%=session[:email] %>
+</p>
+<% end%>
+<p><br/>Enter your Registered Email Address and Password<br/>
+<%=form_tag sessions_path do %>
+<table>
+<tr>
+<td><span><%= label_tag :email %></span></td>
+<td>&nbsp;<%= text_field_tag :email , params[:email] %></td>
+</tr>
+<tr>
+<td><span><%= label_tag :password %></span></td>
+<td>&nbsp;<%= password_field_tag :password  %></td>
+</tr>
+
+<tr><td><%= submit_tag :Login %> </td></tr>
+</table>
+<% end %>
+</p>
