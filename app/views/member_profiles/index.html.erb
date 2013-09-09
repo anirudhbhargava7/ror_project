@@ -1,0 +1,33 @@
+<h1>Profile</h1>
+
+<div>
+      <% if flash[:status]==TRUE %>
+
+<p> <%=flash[:alert] %></p>
+
+<% elsif flash[:status] == FALSE %>
+
+<%= flash[:alert]%>
+
+ <% end %>
+
+</div>
+<%flash[:status]=FALSE%>
+
+<% if @pro == nil %>
+You have not created your profile.<br/>
+<p><%=link_to "Create Your Profile" , '/member_new'%></p>
+<% end %>
+
+<% if @pro != nil %>
+
+<table border="1">
+<tr>
+<td><strong>Name:</strong></td><td><%=@name %></td></tr>
+<tr><td><strong>Age:</strong></td><td><%= @pro.age %></td></tr>
+<tr><td><strong>Location:</strong></td><td><%= @pro.location  %></td></tr>
+<tr><td><strong>About me:</strong></td><td><%= @pro.desc%></td></tr>
+</table>
+<br/><br/>
+&emsp;&emsp;&emsp;&emsp; &raquo;<%=link_to "edit your profile" ,'/member_edit'%>
+<% end %>

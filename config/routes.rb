@@ -1,5 +1,6 @@
 Msync::Application.routes.draw do
 
+
 resources :users
    match '/register' => 'users#new'
   
@@ -7,9 +8,11 @@ resources :sessions
   match '/login' => 'sessions#new'
   match '/logout'=> 'sessions#destroy'
  
-resources :profiles
-  match '/member_one' => 'profiles#index'
-  match '/member_create' => 'profiles#create'
+resources :member_profiles
+  match '/member_new' => 'member_profiles#new'
+  match '/member_one' => 'member_profiles#index'
+  match '/member_create' => 'member_profiles#create'
+  match '/member_edit' =>'member_profiles#edit'
   
   #get "sessions/create"
 
@@ -63,7 +66,7 @@ resources :profiles
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'Welcome#index'
+   root :to => 'users#new'
 
   # See how all your routes lay out with "rake routes"
 

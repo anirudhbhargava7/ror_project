@@ -1,0 +1,23 @@
+<h1>Create Your Profile</h1>
+
+
+<p><em>Hi <%= session[:name] %>! , Update following fields so that other users can find you on the network. </em></p>
+
+<%= form_for (@pro) do |profile| %>
+
+<table>
+<tr><td>
+<%= profile.label :age ,'Age:'%></td>
+<td><%= text_field(:profile, :age, :size => 20) %></td></tr>
+<tr><td>
+<%= profile.label :location , 'location:'%></td>
+<td><%=  text_field(:profile, :location, :size => 20) %></td></tr>
+<tr><td>
+<%= profile.label :desc , 'About You:'%></td>
+<td><%= text_area(:profile, :desc, :cols => 40, :rows => 5) %></td></tr>
+<tr><td>
+<%= profile.submit "Create"%></td></tr>
+</table>
+
+
+<% end %>
