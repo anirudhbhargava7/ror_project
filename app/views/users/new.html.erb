@@ -32,7 +32,7 @@
 <%= user.label :password_confirmation , 'Confirm Password'%></td>
 <td><%= user.password_field :password_confirmation %></td></tr>
 <tr><td>
-<%= user.submit "Register"%></td></tr>
+<%= user.submit "Register" , {class:"btn"}  %></td></tr>
 </table>
 <% end %>
 <% flash[:status]=false %>

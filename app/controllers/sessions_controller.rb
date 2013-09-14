@@ -5,10 +5,12 @@ class SessionsController < ApplicationController
   def create
 
      @email=params[:email]
-  	 member = User.where(:email=>@email).first
-     
-     if member 
+     @password = params[:password]
+     member = User.where(:email=>@email , :password =>@password).first
+     if member
+
      	session[:email]=member.email
+      session[:id] = member.id 
      	flash[:notice]="Successfully Logged in"
         redirect_to member_one_path
       else

@@ -13,7 +13,14 @@ resources :member_profiles
   match '/member_one' => 'member_profiles#index'
   match '/member_create' => 'member_profiles#create'
   match '/member_edit' =>'member_profiles#edit'
-  
+
+resources :playlists
+match 'playlist_index' => 'playlists#index' 
+match 'playlist_edit' => 'playlists#edit'
+
+resources :songs
+match '/song_new' => 'songs#new'
+match 'song_create' => 'songs#create'
   #get "sessions/create"
 
   #get "sessions/destroy"

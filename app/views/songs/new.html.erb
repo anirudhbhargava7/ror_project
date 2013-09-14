@@ -1,0 +1,28 @@
+<h1>Songs#new</h1>
+<p>Find me in app/views/songs/new.html.erb</p>
+
+
+<%= form_for @song , :html=> {:multipart =>true}  do |song| %>
+<table>
+<tr>	
+<td><%= song.label :name %></td>
+<td><%= song.text_field :song_name%></td>
+</tr>
+
+<tr>
+<td><%= song.label :genre %></td>
+<td><%= song.text_field :song_genre%></td> 
+</tr>
+
+<tr>
+<td><%= song.label :song %></td>
+<td><%= song.file_field :song%></td>
+</tr>
+<tr><td><br/></td></tr>
+<tr>
+<td></td>	
+<td><%= song.submit 'Upload Song' %></td>
+</tr>
+
+</table>
+<% end %>

@@ -1,0 +1,24 @@
+<h1>Listing playlists</h1>
+
+<table class ="table">
+  <tr>
+   <br/>
+  </tr>
+
+<% @playlists.each do |playlist| %>
+  <tr>
+    <td class="lead">&raquo;<strong><%= playlist.playlist_name %></strong></td>
+      
+    <td class="btn btn-success"><%= link_to 'Show', playlist %></td>
+    <td class="btn btn-success"><%= link_to 'Edit', edit_playlist_path(playlist) %></td>
+    <td class="btn btn-danger">
+      <%= link_to 'Destroy', playlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+
+<tr><td></td><td class="btn btn-default"><%= link_to 'New Playlist', new_playlist_path %></td></tr>
+</table>
+
+<br/>
+
+
