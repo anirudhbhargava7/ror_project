@@ -18,9 +18,9 @@ resources :playlists
 match 'playlist_index' => 'playlists#index' 
 match 'playlist_edit' => 'playlists#edit'
 
-resources :songs
-match '/song_new' => 'songs#new'
-match 'song_create' => 'songs#create'
+resources :products
+match '/products_new' => 'products#new'
+
   #get "sessions/create"
 
   #get "sessions/destroy"

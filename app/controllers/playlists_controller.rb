@@ -14,11 +14,11 @@ class PlaylistsController < ApplicationController
   # GET /playlists/1.json
   def show
     @playlist = Playlist.find(params[:id])
-  
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @playlist }
-    end
+    
+     respond_to do |format|
+       format.html # show.html.erb
+       format.json { render json: @playlist }
+     end
   end
 
   # GET /playlists/new

@@ -5,6 +5,13 @@
   <%= stylesheet_link_tag  "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+   <script>
+audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+
+  </script>
 </head>
 <body>
 <br/><br/>	
@@ -20,7 +27,7 @@ Music Sync</p> <small>a common platform for music artist and fans to be in sync!
     <a class="brand" href="/member_one">Profile</a>
     <ul class="nav">
     <li class=""><a href="#">Search</a></li>
-    <li><a href="/playlist_index">Manage</a></li>
+    <li><a href="/products_new">Repository</a></li>
     <li><a href="#">Playlist</a></li>
     <li><a href="#">Setting</a></li>
     <li><a href="/logout">Sign Out</a></li>

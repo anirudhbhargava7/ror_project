@@ -1,3 +1,4 @@
+<% if session[:email]!=nil %>
 <h1>Profile</h1>
 
 <div>
@@ -31,3 +32,6 @@ You have not created your profile.<br/>
 <br/><br/>
 &emsp;&emsp;&emsp;&emsp; &raquo;<%=link_to "edit your profile" ,'/member_edit'%>
 <% end %>
+<%else%>
+<h1>ERROR!</h1>
+<%end %>
