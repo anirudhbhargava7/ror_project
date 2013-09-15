@@ -1,3 +1,10 @@
+<script>
+go_div(){
+
+alert("Hello")
+
+}
+</script>
 <% if session[:email]!=nil %>
 <h1>Profile</h1>
 
@@ -21,16 +28,17 @@ You have not created your profile.<br/>
 <% end %>
 
 <% if @pro != nil %>
-
-<table border="1">
+<div id="index">
+<table class="table" border ="1">
 <tr>
-<td><strong>Name:</strong></td><td><%=@name %></td></tr>
-<tr><td><strong>Age:</strong></td><td><%= @pro.age %></td></tr>
+<td><strong>Name:</strong></td><td><%=@name %></td><td rowspan ="4" width="25%"><em>Upload a photo<br>(under maintenance)</em></td></tr>
+<tr><td><strong>Age:</strong></td><td width="50%"><%= @pro.age %></td></tr>
 <tr><td><strong>Location:</strong></td><td><%= @pro.location  %></td></tr>
-<tr><td><strong>About me:</strong></td><td><%= @pro.desc%></td></tr>
+<tr><td><strong>About me:</strong></td><td><%= @pro.desc%></td>
+</tr>
 </table>
-<br/><br/>
-&emsp;&emsp;&emsp;&emsp; &raquo;<%=link_to "edit your profile" ,'/member_edit'%>
+<div class =" btn btn-warning"><%=link_to "edit your profile" ,"#", :onclick => 'go_div()' %></div>
+</div>
 <% end %>
 <%else%>
 <h1>ERROR!</h1>

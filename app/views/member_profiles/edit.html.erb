@@ -1,2 +1,12 @@
 <h1>Edit Profile</h1>
-<p>You can edit your profile here</p>
+<%=form_for(@pro) do |profile| %>
+<table class="table" border ="1">
+<tr>
+<td><strong>Name:</strong></td><td><%= profile.text_field :name, :value => (@name)  %></td><td rowspan ="4" width="25%"><em>Upload a photo<br>(under maintenance)</em></td></tr>
+<tr><td><strong>Age:</strong></td><td width="50%"><%= profile.text_field  :age  %></td></tr>
+<tr><td><strong>Location:</strong></td><td><%= profile.text_field :location  %></td></tr>
+<tr><td><strong>About me:</strong></td><td><%= profile.text_field  :desc%></td>
+</tr>
+</table>
+<div class =" btn btn-warning"><%=profile.submit 'Update Profile'%></div>
+<%end %>

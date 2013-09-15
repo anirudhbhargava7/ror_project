@@ -29,9 +29,24 @@ class MemberProfilesController < ApplicationController
   end
 
   def edit
+  
+    @pro = MemberProfile.where(:email => session[:email]).first
+    @name=session[:name]
+
   end
 
-  def update
+  def update 
+    @pro = MemberProfile.where(:email => session[:email]).first  
+    
+    @pro.update_attributes(:age => params[:member_profile][:age] , :location =>params[:member_profile][:location] , :desc => params[:member_profile][:desc])
+   if @pro.save
+       flash[:status] = true
+       flash[:alert] ="Profile Updated!"
+       else
+       flash[:status] = false
+       flash[:alert] = @pro.errors.full_messages 
+      end
+      redirect_to member_one_path     
   end
 
   def destroy
