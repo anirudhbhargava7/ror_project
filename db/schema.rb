@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130915025958) do
+ActiveRecord::Schema.define(:version => 20130916005449) do
 
   create_table "controllers", :force => true do |t|
     t.string   "playlists"

@@ -1,0 +1,8 @@
+<h1>Featuring Songs</h1>
+<br/>
+<table>
+<% @product.each  do |product| %>
+<tr><td><%=product.name%></td><td><audio src=<%=product.audio%> preload="auto" /></td></tr>
+<tr><td> <br/></td>  <td></td></tr>
+<% end %>
+</table>	

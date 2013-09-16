@@ -2,6 +2,12 @@ require 'spec_helper'
 
 describe UsersController do
 
+
+describe 'database atble' do
+
+end
+
+
   describe "GET 'index'" do
     it "returns http success" do
       get 'index'
@@ -50,5 +56,9 @@ describe UsersController do
       response.should be_success
     end
   end
+
+
+
+
 
 end

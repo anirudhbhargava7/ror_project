@@ -21,6 +21,8 @@ match 'playlist_edit' => 'playlists#edit'
 resources :products
 match '/products_new' => 'products#new'
 
+resources :home
+match '/home' => 'home#index'
 
   #get "sessions/create"
 
@@ -74,7 +76,7 @@ match '/products_new' => 'products#new'
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'users#new'
+   root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
